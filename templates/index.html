@@ -1,0 +1,30 @@
+{% extends 'tim/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="shadow p-3 mb-5 bg-body rounded py-4">
+            <div class="col- offset-">
+                <table class="table table table-striped table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Country</th>
+      <th scope="col">Capital</th>
+      <th scope="col">Currency</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  {% for tim in countries %}
+    <tr>
+      <th scope="row">{{ tim.id }}</th>
+      <td>{{ tim.Country_Name }}</td>
+      <td>{{ tim.Country_Capital }}</td>
+      <td>{{ tim.Country_Currency }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
