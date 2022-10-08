@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,14 +10,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ request.title }}</title>
     <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-<h1>{{ word }} Django !</h1>
-<br>
+
+
+{% include 'tim/navbar.html' %}
+
+
+{% block title %}
+
+{% endblock %}
+
+
 {% block content %}
 
 {% endblock %}
+
 
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'main/js/main.js' %}"></script>

@@ -6,8 +6,17 @@
 }
 
 h1 {
-    color: grey;
     font-size: 5rem;
     text-align: center;
     text-shadow: 2px 2px 4px #000000;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.main {
+    caret-color: black;
 }

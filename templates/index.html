@@ -1,29 +1,48 @@
 {% extends 'tim/base.html' %}
 
+
+{% block navbar %}
+
+{% endblock %}
+
+
+{% block title %}
+    <br>
+    <h1 class="text-secondary">Main Page</h1>
+    <br>
+{% endblock %}
+
+
 {% block content %}
     <div class="container">
         <div class="shadow p-3 mb-5 bg-body rounded py-4">
             <div class="col- offset-">
                 <table class="table table table-striped table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Country</th>
-      <th scope="col">Capital</th>
-      <th scope="col">Currency</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-  {% for tim in countries %}
-    <tr>
-      <th scope="row">{{ tim.id }}</th>
-      <td>{{ tim.Country_Name }}</td>
-      <td>{{ tim.Country_Capital }}</td>
-      <td>{{ tim.Country_Currency }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fs-4">ID</th>
+                            <th scope="col" class="fs-4">Country</th>
+                            <th scope="col" class="fs-4">Capital</th>
+                            <th scope="col" class="fs-4">Currency</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                         {% for country in countries %}
+                            <tr>
+                                <th scope="row">{{ country.id }}</th>
+                                <td>{{ country.Country_Name }}</td>
+                                <td>{{ country.Country_Capital }}</td>
+                                <td class="d-flex justify-content-between">
+                                    <span>{{ country.Country_Currency }}</span>
+                                    <span>
+                                        <a href="{% url 'update' id=country.id %}" class="bi bi-pencil-fill btn btn-success mx-2"></a>
+                                        <a href="{% url 'delete' id=country.id %}" class="bi bi-trash-fill btn btn-danger"></a>
+                                    </span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
